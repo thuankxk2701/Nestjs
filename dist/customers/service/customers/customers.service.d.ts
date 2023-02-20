@@ -1,12 +1,15 @@
+import { CreateCustomerDto } from "../../controllers/dtos/CreateCustomer.dto";
 export declare class CustomersService {
-    users: {
-        id: number;
-        email: string;
-        createdAt: Date;
-    }[];
+    private customers;
     findCustomerById(id: number): {
         id: number;
         email: string;
-        createdAt: Date;
+        name: string;
     };
+    createCustomer(customerDto: CreateCustomerDto): void;
+    getAllCustomers(): {
+        id: number;
+        email: string;
+        name: string;
+    }[];
 }

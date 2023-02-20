@@ -1,5 +1,6 @@
 import { CustomersService } from "../../service/customers/customers.service";
 import { Request, Response } from 'express';
+import { CreateCustomerDto } from "../dtos/CreateCustomer.dto";
 export declare class CustomersController {
     private customersService;
     constructor(customersService: CustomersService);
@@ -7,6 +8,12 @@ export declare class CustomersController {
     searchCustomerById(id: number): {
         id: number;
         email: string;
-        createdAt: Date;
+        name: string;
     };
+    getAllCustomers(): {
+        id: number;
+        email: string;
+        name: string;
+    }[];
+    createCustomer(createCustomerDto: CreateCustomerDto): void;
 }

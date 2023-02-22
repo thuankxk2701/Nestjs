@@ -9,30 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCustomerDto = void 0;
+exports.CreateAddressDto = void 0;
 const class_validator_1 = require("class-validator");
-const CreateAddress_dto_1 = require("./CreateAddress.dto");
-const class_transformer_1 = require("class-transformer");
-class CreateCustomerDto {
+class CreateAddressDto {
 }
 __decorate([
-    (0, class_validator_1.IsEmail)(),
-    __metadata("design:type", String)
-], CreateCustomerDto.prototype, "email", void 0);
-__decorate([
-    (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", Number)
-], CreateCustomerDto.prototype, "id", void 0);
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateAddressDto.prototype, "line1", void 0);
 __decorate([
+    (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], CreateCustomerDto.prototype, "name", void 0);
+], CreateAddressDto.prototype, "zip", void 0);
 __decorate([
-    (0, class_validator_1.ValidateNested)(),
-    (0, class_validator_1.IsNotEmptyObject)(),
-    (0, class_transformer_1.Type)(() => CreateAddress_dto_1.CreateAddressDto),
-    __metadata("design:type", CreateAddress_dto_1.CreateAddressDto)
-], CreateCustomerDto.prototype, "address", void 0);
-exports.CreateCustomerDto = CreateCustomerDto;
-//# sourceMappingURL=CreateCustomer.dto.js.map
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateAddressDto.prototype, "city", void 0);
+exports.CreateAddressDto = CreateAddressDto;
+//# sourceMappingURL=CreateAddress.dto.js.map

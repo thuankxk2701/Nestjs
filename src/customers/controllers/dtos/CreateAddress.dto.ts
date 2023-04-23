@@ -10,7 +10,7 @@ export class CreateAddressDto{
   zip: string;
   @IsNotEmpty()
   @IsString()
-
   city : string;
+
   state : string;
 }

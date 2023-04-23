@@ -5,7 +5,7 @@ declare const module: any;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('api')
+  app.setGlobalPrefix('v1.0/api')
   await app.listen(NEST_APP_PORT);
   if(module.hot){
     module.hot.accept();

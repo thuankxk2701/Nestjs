@@ -13,9 +13,11 @@ import { Type } from "class-transformer";
 export class  CreateCustomerDto{
    @IsEmail()
    email: string;
+
    @IsNumber()
    @IsNotEmpty()
    id: number;
+
    @IsNotEmpty()
    name : string;
 

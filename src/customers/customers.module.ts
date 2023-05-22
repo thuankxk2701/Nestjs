@@ -2,6 +2,7 @@ import { MiddlewareConsumer, Module, NestModule, RequestMethod } from "@nestjs/c
 import { CustomersController } from "./controllers/customers/customers.controller";
 import { CustomersService } from "./service/customers/customers.service";
 import { ValidateCustomerMiddleware } from "./Middlewares/validate-customer.middleware";
+import { ValidateCustomerAccountMiddleware } from "./Middlewares/validate-customer-account.middleware";
 
 @Module({
   controllers: [CustomersController],
@@ -9,6 +10,6 @@ import { ValidateCustomerMiddleware } from "./Middlewares/validate-customer.midd
 })
 export class CustomersModule implements NestModule{
   configure(consumer: MiddlewareConsumer): any {
-    consumer.apply(ValidateCustomerMiddleware).forRoutes(CustomersController)
+    consumer.apply(ValidateCustomerMiddleware, ValidateCustomerAccountMiddleware).forRoutes(CustomersController)
   }
 }
